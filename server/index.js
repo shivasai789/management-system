@@ -22,9 +22,13 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log("Database Error: ", error)
 })
 
+const allowedOrigin = process.env.CLIENT_BASE_URL.endsWith('/')
+  ? process.env.CLIENT_BASE_URL.slice(0, -1)
+  : process.env.CLIENT_BASE_URL;
+
 app.use(
     cors({
-        origin: process.env.CLIENT_BASE_URL,
+        origin: allowedOrigin,
         methods: ['GET','POST','PUT','DELETE'],
         allowedHeaders: [
             "Content-Type",
