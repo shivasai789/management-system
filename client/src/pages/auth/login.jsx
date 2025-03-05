@@ -19,7 +19,7 @@ function LoginPage() {
     const onSubmit = (event) => {
         event.preventDefault();
         dispatch(loginUserAction(formData)).then((data)=>{
-            console.log(data)
+            // console.log(data)
             if(data?.payload?.success){
                 toast.success("Login successful!");
                 if(data?.payload?.user?.role === "Manager"){
