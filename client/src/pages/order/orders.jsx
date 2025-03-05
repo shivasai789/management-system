@@ -59,10 +59,10 @@ function OrdersTable() {
   const totalPages = orders ? Math.ceil(orders.length / pageSize) : 1;
   const paginatedOrders = orders?.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
-  console.log(orders, "orders");
-  console.log(materialsData, "materials");
-  console.log(workstationData, "workstations");
-  console.log(user,"user")
+  // console.log(orders, "orders");
+  // console.log(materialsData, "materials");
+  // console.log(workstationData, "workstations");
+  // console.log(user,"user")
 
   const fetchMaterialsData = async () => {
     try {
@@ -76,7 +76,7 @@ function OrdersTable() {
   const fetchWorkstationData = async () => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_SERVER_BASE_URL}api/workstation`);
-      console.log(response);
+      // console.log(response);
       setWorkstationData(response?.data?.workstation);
     } catch (error) {
       console.log(error);

@@ -33,7 +33,6 @@ const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getOverviewData.fulfilled, (state, action) => {
-        console.log(action,"dsjafhdkfh")
         state.isLoading = false;
         state.overviewData = !action.payload.success ? null : action.payload.overview;
       })

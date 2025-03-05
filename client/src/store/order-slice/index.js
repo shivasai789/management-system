@@ -28,13 +28,13 @@ export const getOrders = createAsyncThunk(
 export const editOrder = createAsyncThunk(
   "/order/edit-order",
   async ({id,status}, { rejectWithValue }) => {
-    console.log(id,status)
+    // console.log(id,status)
     try {
       const response = await axios.put(
         `${import.meta.env.VITE_SERVER_BASE_URL}api/order/${id}?status=${status}`
       );
 
-      console.log(response)
+      // console.log(response)
 
       if (!response.data.success) {
         throw new Error(response.data.message || "Editing Order failed");
